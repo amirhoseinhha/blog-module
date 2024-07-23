@@ -16,13 +16,11 @@ class Routing
 
     public function run()
     {
-        $path = realpath(dirname(__FILE__) . "/../../application/controllers/" . $this->current_route[0] . '.php');
+            $path = realpath(dirname(__FILE__) . "/../../application/controllers/" . $this->current_route[0] . '.php');
         if (!file_exists($path)) {
             echo '404 - file not exist';
             exit;
         }
-        require_once($path);
-
         sizeof($this->current_route) == 1 ? $method = 'index' : $method = $this->current_route[1];
         $class = "Application\Controllers\\" . $this->current_route[0];
         $object = new $class();

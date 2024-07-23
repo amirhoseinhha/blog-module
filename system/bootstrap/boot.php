@@ -8,6 +8,7 @@ require_once('system/bootstrap/Autoload.php');
 $autoload = new \System\Bootstrap\Autoload();
 $autoload->autoloader();
 
+
 $router = new \System\router\Routing();
 $router->run();
 

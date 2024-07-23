@@ -18,6 +18,7 @@ class Model
             $option = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
             try {
                 $this->connection = new PDO("mysql:host=" . $dbHost . ";dbname=" . $dbName, $dbUsername, $dbPassword);
+//                var_dump($this->connection);
             } catch (PDOException $e) {
                 echo 'connection to data base is feild  ' . $e->getMessage();
             }

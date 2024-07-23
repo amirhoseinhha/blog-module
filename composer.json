@@ -1,0 +1,11 @@
+{
+    "require": {
+        "intervention/image": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\Controllers\\" : "application/controllers",
+            "Application\\Model\\" : "application/model"
+        }
+    }
+}

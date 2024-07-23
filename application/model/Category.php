@@ -17,6 +17,13 @@ class Category extends Model{
         return $result;
     }
 
+    public function articless($id){
+        $query = "SELECT * ,(SELECT `name` FROM `categories` WHERE `categories`.`id` = `articles`.`cat_id`) as cats FROM `articles` WHERE id=?";
+        $result = $this->query($query , [$id])->fetch();
+        $this->closeConnection();
+        return $result;
+    }
+
     public function articles($cat_id){
         $query = "SELECT * FROM `articles` WHERE cat_id = ?";
         $result = $this->query($query , [$cat_id])->fetchAll();

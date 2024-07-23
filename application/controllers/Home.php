@@ -24,10 +24,10 @@ class Home extends Controller{
     }
 
     public function show($id){
-        $category = new Category();
-        $categories = $category->all();
-        $article = new Article();
-        $articles = $article->find($id);
-        return $this->view('app.show' ,compact('categories' , 'articles'));
+     $ob_article = new Article();
+     $article = $ob_article->find($id);
+     $ob_category = new Category();
+     $category = $ob_category->articless($id);
+     return $this->view('app.detail' , compact('article' , 'category'));
     }
 }
